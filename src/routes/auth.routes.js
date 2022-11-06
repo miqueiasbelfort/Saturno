@@ -20,7 +20,7 @@ export default function Auth() {
         name='SignUp'
         component={SignUp}
         options={{
-          headerTitle: 'Voltar'
+          headerShown: false
         }}
       />
     </AuthStack.Navigator>

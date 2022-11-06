@@ -1,68 +1,59 @@
 import styled from "styled-components/native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const Container = styled.SafeAreaView`
     flex: 1;
+`
+export const Bg = styled(LinearGradient)`
+    flex: 1;
     align-items: center;
-    padding-top: 20px;
+    padding: 45px 20px;
+    justify-content: center;
 `
 export const Logo = styled.Image`
-    width: 212px;
-    height: 200px;
-    margin: 30px 0;
+    width: 120px;
+    height: 150px;
 `
-export const Title = styled.Text`
-    font-size: 30px;
-    font-weight: bold;
-    color: #E84A5E;
-    text-align: center;
-    text-decoration: underline;
-`
-export const LoginContainer = styled.View`
+export const Form = styled.ScrollView`
+    margin-top: 50px;
     flex: 1;
     width: 100%;
-    background-color: #2A363820;
-    padding: 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    align-items: center;
-
 `
 export const Input = styled.TextInput.attrs({
-    placeholderTextColor: '#000'
+    placeholderColor: '#2A3638',
 })`
     width: 100%;
     padding: 10px;
+    height: 50px;
+    background-color: #ffffff80;
+    border-radius: 10px;
     margin-top: 10px;
-    border-bottom-width: 1px;
-    border-bottom-color: #2A3638;
+    margin-bottom: 10px;
+`
+export const Button = styled.TouchableOpacity`
+
+`
+export const Text = styled.Text`
+    color: #fff;
 `
 
-export const Button = styled.TouchableOpacity`
+export const ButtonContainer = styled.View`
     width: 100%;
-`
-export const LostPasswordText = styled.Text`
-    margin: 20px 0;
-    font-weight: 300;
-    color: #2A3638;
-    text-align: left;
-`
-export const RegisterPageText = styled.Text`
-    text-align: center;
-    margin: 0 0 20px 0;
-    font-weight: 300;
-    color: #2A3638;
+    flex: 1;
+    align-items: center;
 `
 export const SubmitButton = styled.TouchableOpacity`
-    max-width: 200px;
-    padding: 10px 25px;
-    background-color: #E84A5E;
+    width: 200px;
+    height: 50px;
     align-items: center;
     justify-content: center;
+    background-color: #E84A5E;
+    border-width: 1px;
+    border-color: #FF0020;
     border-radius: 10px;
 `
-export const ButtonSubmitText = styled.Text`
+export const TextBtn = styled.Text`
     font-size: 20px;
-    text-align: center;
-    color: #fff;
     font-weight: bold;
+    color: #fff;
 `

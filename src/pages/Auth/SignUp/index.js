@@ -3,17 +3,17 @@ import { useNavigation } from "@react-navigation/native"
 
 import {
   Container,
-  LogoContainer,
+  Bg,
+  Form,
   Logo,
-  TextMotivation,
-  RegisterContainer,
+  Text,
   Input,
   Button,
-  BackLogin,
   SubmitButton,
-  ButtonSubmitText,
-  ButtonContainerSubmit
-} from "./styles"
+  TextBtn,
+  ButtonContainer
+} from "../SignIn/styles"
+import {LogoContainer, TextLetter, View, CheckTerns, CheckContainer} from "./styles"
 
 export default function SignUp() {
 
@@ -21,43 +21,57 @@ export default function SignUp() {
 
   return (
     <Container>
+      <Bg
+        colors={['#FFA8A2', '#E84A5E']}
+      >
 
-      <LogoContainer>
-        <Logo
-          source={require('../../../assets/Logo.png')}
-        />
-        <TextMotivation>Um mundo sem medo de ser quem é!</TextMotivation>
-      </LogoContainer>
+        <LogoContainer>
+          <Logo
+            source={require('../../../assets/Logo.png')}
+          />
+          <View>
+            <TextLetter>
+              “Quando a liberdade de  expessão nos é tirada, logo poderemos ser levados, como ovelhas, mudos e silenciosos para o abate”.
+            </TextLetter>
+            <Text style={{fontWeight: 'bold'}}>George Washington</Text>
+          </View>
+        </LogoContainer>
 
-      <RegisterContainer>
-        <Input
-          placeholder="Nome de Usuário"
-        />
-        <Input
-          placeholder="E-mail"
-        />
-        <Input
-          placeholder="Telefone celular - 61992254791"
-        />
-        <Input
-          placeholder="Senha"
-        />
-        <Input
-          placeholder="Confirmar Senha"
-        />
+        <Form showsVerticalScrollIndicator={false} style={{marginBottom: 10}}>
 
-        <Button onPress={() => navigation.goBack()}>
-          <BackLogin>Já tenho conta!</BackLogin>
-        </Button>
+          <Input
+            placeholder="Nome de usúario"
+          />
+           <Input
+            placeholder="Email"
+          />
+           <Input
+            placeholder="Senha"
+          />
+           <Input
+            placeholder="Confirmar senha"
+          />
 
-        <ButtonContainerSubmit>
-          <SubmitButton>
-            <ButtonSubmitText>Registrar</ButtonSubmitText>
-          </SubmitButton>
-        </ButtonContainerSubmit>
+          <CheckContainer>
+            <CheckTerns/>
+            <TextLetter style={{marginLeft: 10,}}>Aceito os termos de uso!</TextLetter>
+          </CheckContainer>
 
-      </RegisterContainer>
+          <Button onPress={() => navigation.goBack()}>
+            <Text style={{textAlign: 'center', marginTop: 10, marginBottom: 20}}>Já tenho conta!</Text>
+          </Button>
 
+          <ButtonContainer>
+
+            <SubmitButton>
+              <TextBtn>Cadastrar</TextBtn>
+            </SubmitButton>
+
+          </ButtonContainer>
+
+        </Form>
+
+      </Bg>
     </Container>
   )
 }

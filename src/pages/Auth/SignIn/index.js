@@ -2,16 +2,16 @@ import React from 'react'
 import { useNavigation } from "@react-navigation/native"
 
 import { 
-  Container, 
-  Logo, 
-  Title, 
-  LoginContainer, 
-  Input, 
-  LostPasswordText,
+  Container,
+  Bg,
+  Logo,
+  Form,
+  Input,
   Button,
-  RegisterPageText,
+  Text,
+  ButtonContainer,
   SubmitButton,
-  ButtonSubmitText
+  TextBtn
 } from './styles' 
 
 export default function SignIn() {
@@ -20,30 +20,36 @@ export default function SignIn() {
 
   return (
     <Container>
+    <Bg
+      colors={['#FFA8A2', '#E84A5E']}
+    >
       <Logo
         source={require('../../../assets/Logo.png')}
       />
-      <LoginContainer>
-
+      <Form>
         <Input
-          placeholder="E-mail"
+          placeholder="Email"
         />
         <Input
           placeholder="Senha"
         />
+        
         <Button>
-          <LostPasswordText>Esqueci minha senha!</LostPasswordText>
+          <Text>Esqueci minha senha!</Text>
         </Button>
 
         <Button onPress={() => navigation.navigate('SignUp')}>
-          <RegisterPageText>Ainda não tenho conta!</RegisterPageText>
+          <Text style={{textAlign: 'center', marginTop: 20, marginBottom: 20}}>Ainda não tenho conta!</Text>
         </Button>
 
-        <SubmitButton>
-          <ButtonSubmitText>Entrar</ButtonSubmitText>
-        </SubmitButton>
+        <ButtonContainer>
+          <SubmitButton>
+            <TextBtn>Entrar</TextBtn>
+          </SubmitButton>
+        </ButtonContainer>
 
-      </LoginContainer>
+      </Form>
+    </Bg>
     </Container>
   )
 }
